@@ -39,6 +39,7 @@ export(
        "jags",
        "jags.parallel",
        "jags2",
+	   "jags2light",
        "jags2bugs",
        "recompile"
 )
