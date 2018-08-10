@@ -158,7 +158,7 @@ jags.sims.light <- function (parameters.to.save, n.chains, n.iter, n.burnin, n.t
       long.short = long.short, dimension.short = dimension.short, 
       indexes.short = indexes.short, last.values = last.values)
   if (DIC) {
-    deviance <- all$sims.array[, , "deviance", drop = FALSE]
+    deviance <- sims.array[, , "deviance", drop = FALSE]
     dimnames(deviance) <- NULL
     dim(deviance) <- dim(deviance)[1:2]
     pD <- numeric(n.chains)
