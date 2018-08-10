@@ -1,7 +1,7 @@
-jags2 <- function (data, inits, parameters.to.save, model.file = "model.bug",
+jags2light <- function (data, inits, parameters.to.save, model.file = "model.bug",
   n.chains = 3, n.iter = 2000, n.burnin = floor(n.iter/2),
   n.thin = max(1, floor((n.iter - n.burnin)/1000)),
-  DIC = TRUE, jags.path = "", working.directory = NULL, clearWD = TRUE,
+  DIC = TRUE, jags.path = "", working.directory = NULL, #clearWD = TRUE,
   refresh = n.iter/50)
 {
   if (!is.null(working.directory)) {
@@ -121,11 +121,11 @@ jags2 <- function (data, inits, parameters.to.save, model.file = "model.bug",
       n.chains = n.chains, n.iter = n.iter, n.burnin = n.burnin,
       n.thin = n.thin, DIC = DIC)
 
-  if (clearWD) {
-      file.remove(c("jagsdata.txt", "CODAindex.txt", inits.files,
-          "jagsscript.txt", paste("CODAchain", 1:n.chains,
-              ".txt", sep = "")))
-  }
+  #if (clearWD) {
+  #    file.remove(c("jagsdata.txt", "CODAindex.txt", inits.files,
+  #        "jagsscript.txt", paste("CODAchain", 1:n.chains,
+  #            ".txt", sep = "")))
+  #}
   class(fit) <- "bugs"
   return(fit)
 }

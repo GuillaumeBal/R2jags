@@ -22,7 +22,7 @@
 
 
 
-jags.sims <- function (parameters.to.save, n.chains, n.iter, n.burnin, n.thin, 
+jags.sims.light <- function (parameters.to.save, n.chains, n.iter, n.burnin, n.thin, 
   DIC = TRUE) 
 {
   
@@ -150,7 +150,7 @@ jags.sims <- function (parameters.to.save, n.chains, n.iter, n.burnin, n.thin,
   all <- list(n.chains = n.chains, n.iter = n.iter, n.burnin = n.burnin, 
       n.thin = n.thin, n.keep = n.keep, n.sims = n.sims, 
       #sims.array = sims.array[, , rank.long, drop = FALSE],
-      sims.list = sims.list, 
+      #sims.list = sims.list, 
       #sims.matrix = sims[, rank.long], 
       summary = summary, 
       #mean = summary.mean, sd = summary.sd, median = summary.median, 
